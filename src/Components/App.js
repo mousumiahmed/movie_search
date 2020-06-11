@@ -5,8 +5,7 @@ import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import { makeStyles } from '@material-ui/core/styles';
 import {Paper,Tabs,Tab,Typography,Box} from '@material-ui/core';
-
-
+import './App.css';
 
 
 
@@ -28,33 +27,33 @@ function TabPanel(props) {
       id={`wrapped-tabpanel-${index}`}
       aria-labelledby={`wrapped-tab-${index}`}
       {...other}
-    >
+      >
       {value === index && <Box p={3}>{children}</Box>}
     </Typography>
   );
 }
 
 export default function CenteredTabs() {
-  const classes = useStyles();
-  const [value, setValue] = React.useState(0);
+    const classes = useStyles();
+    const [value, setValue] = React.useState(0);
 
-  const handleChange = (event, newEvent) => {
+    const handleChange = (event, newEvent) => {
     setValue(newEvent);
   };
 
-  return (
-    <div className="marginLeft">
-    <Paper className={classes.root}>
-      <Tabs
-        value={value}
-        onChange={handleChange}
-        indicatorColor="primary"
-        textColor="primary"
-        centered>
-        <Tab label="First_Tab" />
-        <Tab label="Second_Tab" />  
-      </Tabs>
-    </Paper>
+    return (
+      <div className="marginLeft">
+      <Paper className={classes.root}>
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          indicatorColor="primary"
+          textColor="primary"
+          centered>
+          <Tab label="First_Tab" />
+          <Tab label="Second_Tab" />  
+        </Tabs>
+      </Paper>
     
       <TabPanel value={value} index={0}>
         <FirstTab/>

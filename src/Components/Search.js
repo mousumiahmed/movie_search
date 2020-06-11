@@ -17,25 +17,21 @@ export default class Search extends React.Component{
 	componentDidMount(){
 		axios({
 			method: 'get',
-			url: `http://www.omdbapi.com/?apikey=2a1b2047&s=${this.props.moviename}&y=${this.props.year}`
-			
-
-    		
-    		
+			url: `http://www.omdbapi.com/?apikey=2a1b2047&s=${this.props.moviename}&y=${this.props.year}`  		
         })
         
 		.then((response) =>{
-			console.log(response)
+			//console.log(response)
            this.setState({
 				result:response.data.Search
                
             });	
-            console.log(response);
-                    
+          //  console.log(response);                
         })
         
 		.catch((err) => alert(err))
 	}
+
 
 	componentDidUpdate(prevProps){
 		console.log(prevProps)
@@ -75,9 +71,7 @@ export default class Search extends React.Component{
                               </div>
                                 )
                        }
-                       
-                    
-                   
+                         
                     )
              }
 					
